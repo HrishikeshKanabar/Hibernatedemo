@@ -29,7 +29,8 @@
      
      <!-- Mapping --><!-- fully qualified name -->
      <mapping class="entity.Student"/>
-     
+     <mapping class="entity.Instructor"/>
+     <mapping class="entity.InsDetails"/>
     </session-factory>
    
    
