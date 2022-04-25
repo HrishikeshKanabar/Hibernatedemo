@@ -25,9 +25,7 @@ public class InstructorDetails {
 	}
 
 
-	public InstructorDetails(int id, String channel, String hobby) {
-		super();
-		this.id = id;
+	public InstructorDetails(String channel, String hobby) {
 		this.channel = channel;
 		this.hobby = hobby;
 	}
@@ -61,7 +59,16 @@ public class InstructorDetails {
 	public void setHobby(String hobby) {
 		this.hobby = hobby;
 	}
+
+	// To String 
+	@Override
+	public String toString() {
+		return "InstructorDetails [id=" + id + ", channel=" + channel + ", hobby=" + hobby + "]";
+	}
     
+	
+	
+	
 	
 	
 }

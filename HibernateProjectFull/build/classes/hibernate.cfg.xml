@@ -27,7 +27,9 @@
         
         <!-- To map class to database use class fully qualified name -->
         <mapping class="models.Student"/>
- 
+        <mapping class="models.Instrcutor"/>
+        <mapping class="models.InstructorDetails"/>
+        <mapping class="models.Courses"/>
  </session-factory>
 
 </hibernate-configuration>
