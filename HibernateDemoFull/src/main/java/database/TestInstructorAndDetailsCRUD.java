@@ -1,5 +1,6 @@
 package database;
 
+import entity.Instructor;
 import service.InstructorAndDetailService;
 
 public class TestInstructorAndDetailsCRUD {
@@ -8,8 +9,15 @@ public class TestInstructorAndDetailsCRUD {
 		
 		InstructorAndDetailService  obj = new InstructorAndDetailService();
 		
-		obj.createInstructorWithDetails("Prof. Joe","Doe","joe@doe.com","3267890987","www.mcit.com","Hiking");
-
+		//obj.createInstructorWithDetails("Prof. Dell","Bell","dell@bell.com","676866875","www.dellbell.com","Biking");
+        //Instructor insObj=obj.readInstructorAndDetails(1);
+        //System.out.println(insObj.toString());
+		
+		//obj.updateInstructorEmailandHobby(1,"joe@gmail.com","music");
+		
+		//obj.deleteInstructorByQuery(1);
+		
+		obj.deleteInstructorByHibernateEntity(2);
 	}
 
 }
