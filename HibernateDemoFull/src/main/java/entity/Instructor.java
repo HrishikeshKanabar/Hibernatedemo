@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -33,6 +36,14 @@ public class Instructor {
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="instructor_detail_id")
 	private InsDetails ObjInsDetails;
+	
+	
+	// Relationship with course
+	@OneToMany(mappedBy="instruc",cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+	private List<Courses> courses;
+	
+	
+	
 	
 	
 	
@@ -99,7 +110,15 @@ public class Instructor {
 		ObjInsDetails = objInsDetails;
 	}
 
+    //Getters and setters for List  course
+	public List<Courses> getCourses() {
+		return courses;
+	}
 
+
+	public void setCourses(List<Courses> courses) {
+		this.courses = courses;
+	}
 	
 	
 	// To stirng
@@ -109,6 +128,9 @@ public class Instructor {
 		return "Instructor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", phone=" + phone + ", ObjInsDetails=" + ObjInsDetails.toString()+ "]";
 	}
+
+
+	
 	
 	
 

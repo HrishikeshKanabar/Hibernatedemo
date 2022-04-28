@@ -9,7 +9,7 @@ public class TestInstructorAndDetailsCRUD {
 		
 		InstructorAndDetailService  obj = new InstructorAndDetailService();
 		
-		//obj.createInstructorWithDetails("Prof. Dell","Bell","dell@bell.com","676866875","www.dellbell.com","Biking");
+		//obj.createInstructorWithDetails("Prof. JOE","DOE","Doe@gmail.com","6756456746","www.joe.com","Muisc");
         //Instructor insObj=obj.readInstructorAndDetails(1);
         //System.out.println(insObj.toString());
 		
@@ -17,7 +17,7 @@ public class TestInstructorAndDetailsCRUD {
 		
 		//obj.deleteInstructorByQuery(1);
 		
-		obj.deleteInstructorByHibernateEntity(2);
+		//obj.deleteInstructorByHibernateEntity(2);
 	}
 
 }
