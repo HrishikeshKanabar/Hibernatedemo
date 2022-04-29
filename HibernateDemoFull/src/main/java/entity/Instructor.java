@@ -119,15 +119,18 @@ public class Instructor {
 	public void setCourses(List<Courses> courses) {
 		this.courses = courses;
 	}
-	
-	
-	// To stirng
-	
+
+
 	@Override
 	public String toString() {
 		return "Instructor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", phone=" + phone + ", ObjInsDetails=" + ObjInsDetails.toString()+ "]";
+				+ ", phone=" + phone + ", ObjInsDetails=" + ObjInsDetails.toString() + "]";
 	}
+	
+	
+	
+	
+	
 
 
 	

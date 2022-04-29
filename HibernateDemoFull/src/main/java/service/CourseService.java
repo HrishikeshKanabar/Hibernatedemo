@@ -39,5 +39,43 @@ public class CourseService {
 		     sess.close();
 		
 	}
+	
+	// Read course for instructor
+	
+	public Instructor readAllCoursesForAnInstrucotr(int instructorId) {
+		 // Session 
+		Session sess = CourseService.getSession();
+		// Get instructor
+		Instructor ins = sess.get(Instructor.class,instructorId);
+		return ins;
+	}
+	
+	// Update course title
+	
+	public void updateCourseTitle(int courseId,String title) {
+		 // Session 
+		Session sess = CourseService.getSession();
+		// Get Course 
+		Courses oneCourse = sess.get(Courses.class,courseId);
+		// Session life cycle
+	   sess.beginTransaction();
+	   sess.createQuery("update Courses set title='"+title+"'where id="+oneCourse.getId()).executeUpdate();
+	   sess.getTransaction().commit();
+	   sess.close();
+	}
+	
+	
+	public void deleteCourse(int courseId) {
+		// Session 
+		Session sess = CourseService.getSession();
+		// Get Course 
+		Courses oneCourse = sess.get(Courses.class,courseId);
+		// Session life cycle
+	    sess.beginTransaction();
+	    sess.delete(oneCourse);
+	    sess.getTransaction().commit();
+	    sess.close();
+		
+	}
 
 }

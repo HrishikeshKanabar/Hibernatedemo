@@ -80,6 +80,12 @@ public class Courses {
 	public void setInstruc(Instructor instruc) {
 		this.instruc = instruc;
 	}
+
+	@Override
+	public String toString() {
+		return "Courses [id=" + id + ", title=" + title + ", desc=" + desc + ", instruc=" + instruc + "]";
+	}
+
 	
 	
 	
