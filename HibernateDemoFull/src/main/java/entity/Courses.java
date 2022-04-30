@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -28,6 +32,14 @@ public class Courses {
 	@ManyToOne(cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
 	@JoinColumn(name="id")
 	private Instructor instruc;
+	
+	@ManyToMany(cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+	@JoinTable(
+			    name="course_student",
+			    joinColumns=@JoinColumn(name="course_id"),   // PK in Join table
+			    inverseJoinColumns= @JoinColumn(name="student_id")  // FK in Join table
+			)
+	private List<Student> students;
 	
 	// Default constructor
 	

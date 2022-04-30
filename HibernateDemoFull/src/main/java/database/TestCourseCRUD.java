@@ -17,7 +17,7 @@ public class TestCourseCRUD {
 		
 		//obj.updateCourseTitle(3,"Hibernate 5.0");
 		
-		obj.deleteCourse(2);
+		//obj.deleteCourse(2);
 		
 	}
 	
