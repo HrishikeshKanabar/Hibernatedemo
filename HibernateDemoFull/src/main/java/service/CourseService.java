@@ -16,7 +16,6 @@ public class CourseService {
 				cfg.configure("hibernate.cfg.xml");
 				SessionFactory Factory = cfg.buildSessionFactory();
 				Session sess = Factory.openSession();
-				
 				return sess;
 				
 	}

@@ -34,7 +34,7 @@ public class Student {
     private String phone;
 	
 	
-	@ManyToMany(cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+	@ManyToMany(cascade= CascadeType.ALL /* {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH}*/)
 	@JoinTable(
 			    name="course_student",
 			    joinColumns=@JoinColumn(name="student_id"),
@@ -42,6 +42,8 @@ public class Student {
 			)
 	private List<Courses> course;
 	
+	
+
 	// Default constructor
 	public Student() {
 		
@@ -98,6 +100,16 @@ public class Student {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	
+	// Getters and setters for object
+	
+	public List<Courses> getCourse() {
+		return course;
+	}
+
+	public void setCourse(List<Courses> course) {
+		this.course = course;
 	}
 	
 	// to String

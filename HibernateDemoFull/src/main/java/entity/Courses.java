@@ -29,17 +29,18 @@ public class Courses {
 	private String desc;
 	
     // FK
-	@ManyToOne(cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+	@ManyToOne(cascade=  {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
 	@JoinColumn(name="id")
 	private Instructor instruc;
 	
-	@ManyToMany(cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+	@ManyToMany(cascade= CascadeType.ALL /*{CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH}*/)
 	@JoinTable(
 			    name="course_student",
 			    joinColumns=@JoinColumn(name="course_id"),   // PK in Join table
 			    inverseJoinColumns= @JoinColumn(name="student_id")  // FK in Join table
 			)
 	private List<Student> students;
+	 
 	
 	// Default constructor
 	
@@ -50,6 +51,8 @@ public class Courses {
 	 
 	// Fields  constructor
 
+
+	
 
 	public Courses(String title, String desc) {
 		super();
@@ -91,6 +94,16 @@ public class Courses {
 
 	public void setInstruc(Instructor instruc) {
 		this.instruc = instruc;
+	}
+	
+	// Getters and setters for students
+	
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
 	}
 
 	@Override
