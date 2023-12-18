@@ -1,0 +1,49 @@
+body {
+  background-image: url("https://previews.123rf.com/images/bondd/bondd1908/bondd190800050/128001064-school-study-concept-background-simple-pattern-on-a-white-background-different-multi-colored-pencils.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+}
+
+.heading{
+	
+	background-color: black;
+	color:white;
+}
+
+
+.Student{
+	margin-left:auto;
+	margin-right:auto;
+	margin-botton:auto;
+	margin-top:25px;
+	width:25%;
+	border: 2px solid blue;
+	padding: 15px;
+	border-radius:5px;
+	align-items: center;
+}
+
+.Instructor{
+	margin-left:auto;
+	margin-right:auto;
+	margin-botton:auto;
+	margin-top:25px;
+	width:25%;
+	border: 2px solid blue;
+	padding: 15px;
+	border-radius:5px;
+	align-items: center;
+}
+
+.Courses{
+	margin-left:auto;
+	margin-right:auto;
+	margin-botton:auto;
+	margin-top:25px;
+	width:25%;
+	border: 2px solid blue;
+	padding: 15px;
+	border-radius:5px;
+	align-items: center;
+}
